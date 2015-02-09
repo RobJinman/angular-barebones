@@ -14,8 +14,6 @@ module.exports = function() {
     files: [
       '../app/vendor/jquery/dist/jquery.js',
       '../app/vendor/angular/angular.js',
-      '../app/vendor/angular-route/angular-route.js',
-      '../app/vendor/angular-cookies/angular-cookies.js',
       '../app/vendor/angular-mocks/angular-mocks.js',
       '../app/js/dev/**/*.js'
     ],

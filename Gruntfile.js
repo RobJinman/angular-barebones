@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-concat");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-karma");
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -32,6 +33,13 @@ module.exports = function(grunt) {
           "<%= appbase %>/js/dev/*.js",
           "<%= appbase %>/js/dev/**/*.js",
         ],
+      }
+    },
+    uglify: {
+      target: {
+        files: {
+          "<%= appbase %>/js/app.min.js": ["<%= appbase %>/js/app-compiled.js"]
+        }
       }
     },
     sass: {
@@ -84,7 +92,7 @@ module.exports = function(grunt) {
           "<%= appbase %>/js/dev/*.js",
           "<%= appbase %>/js/dev/**/*.js"
         ],
-        tasks: ["concat", "docs"]
+        tasks: ["concat", "uglify:target", "docs"]
       },
       scss: {
         files: ["<%= appbase %>/scss/*.scss"],
@@ -106,7 +114,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask("clean", ["shell:cleanDist"]);
-  grunt.registerTask("build", ["sass:dev", "concat"]);
+  grunt.registerTask("build", ["sass:dev", "concat", "uglify:target"]);
   grunt.registerTask("run", ["connect:server"]);
   grunt.registerTask("docs", ["yuidoc"]);
   grunt.registerTask("test", ["karma:unit_auto"]);

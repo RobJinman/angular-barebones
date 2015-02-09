@@ -10,7 +10,10 @@
 var app = angular.module("App", [
   "ui.bootstrap",
   "ngRoute",
-  "ngCookies"])
+  "ngCookies",
+  "jlUtil",
+  "jlScroll",
+  "jlDirectives"])
 
   .config(["$logProvider", function($logProvider) {
     $logProvider.debugEnabled(true);
