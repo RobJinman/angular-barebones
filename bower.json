@@ -21,6 +21,7 @@
     "jquery": "~2.1.1",
     "angular-bootstrap": null,
     "bootstrap-sass": "3.3.x",
+    "jlUtil": "robjinman/angular-jloop-util",
     "jlScroll": "robjinman/angular-jloop-scroll",
     "jlDirectives": "robjinman/angular-jloop-directives"
   },
