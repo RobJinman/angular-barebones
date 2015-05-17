@@ -1,19 +1,13 @@
-/**
-* @module App
-* @requires ngRoute
-* @requires ngCookies
-* @requires jlUtil
-* @requires jlBackend
-* @requires jlLayout
-* @requires jlScroll
-*/
 var app = angular.module("App", [
   "ui.bootstrap",
   "ngRoute",
   "ngCookies",
   "jlUtil",
   "jlScroll",
-  "jlDirectives"])
+  "jlDirectives",
+  "Controllers",
+  "Directives",
+  "Services"])
 
   .config(["$logProvider", function($logProvider) {
     $logProvider.debugEnabled(true);
@@ -31,3 +25,7 @@ var app = angular.module("App", [
 
 //    $locationProvider.html5Mode(true);
   }]);
+
+angular.module("Controllers", []);
+angular.module("Directives", []);
+angular.module("Services", []);

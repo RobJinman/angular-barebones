@@ -1,11 +1,6 @@
-/**
-* (CONTROLLER) The main controller
-*
-* @namespace App
-* @class MainCtrl
-* @constructor
-*/
-app.controller("MainCtrl", [function() {
+angular.module("Controllers")
+
+.controller("MainCtrl", [function() {
   this.square = function(i) {
     return i * i;
   };
